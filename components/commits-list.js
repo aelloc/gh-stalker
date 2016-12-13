@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
     Vue.component('commits-list', {
         template: `<div>

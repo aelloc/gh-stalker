@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
     Vue.component('user-view', {
         template: `<div>
