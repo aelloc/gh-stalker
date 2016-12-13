@@ -23,4 +23,8 @@ class GitHubAPI {
     searchRepositories(user) {
         return `${this._url}/users/${user}/repos`;
     }
+
+    user(user) {
+        return `${this._url}/users/${user}`;
+    }
 }
