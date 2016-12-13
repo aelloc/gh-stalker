@@ -1,3 +1,5 @@
+'use strict';
+
 (function() {
     Vue.filter('date', function(value) {
         return new Date(value).toLocaleDateString();
