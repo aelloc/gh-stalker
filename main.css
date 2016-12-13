@@ -13,14 +13,6 @@
     justify-content: center;
 }
 
-.has-v-scroll {
-    overflow-y: auto; 
-}
-
-.is-blue {
-    color: #1E90FF;
-}
-
 .commit-msg {
     color: #000;
     text-decoration: none;
