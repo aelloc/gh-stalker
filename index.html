@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Stalker</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <div id="app">
+        <section class="hero is-dark">
+            <div class="hero-head">
+                <header class="nav">
+                    <div class="container">
+                        <div class="nav-left">
+                            <a class="nav-item" target="_blank" href="http://github.com">
+                                <span class="icon">
+                                    <i class="fa fa-github"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title is-1 modeka">GH STALKER</h1>
+                    <search></search>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div v-if="search.count > 0 && !page.isOk" class="notification is-warning has-text-centered">
+                    <error></error>
+                </div>
+                <div id="result" v-if="page.isOk">
+                    <div class="columns has-text-centered">
+                        <div class="column has-content-centered">
+                            <user-view></user-view>
+                        </div>
+                        <div class="column">
+                            <repository-list></repository-list>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="commits" v-if="showCommits" class="section">
+            <div class="container">
+                <div class="heading">
+                    <h1 class="title">Latest Commits</h1>
+                </div>
+                <commits-list></commits-list>
+            </div>
+        </section>
+    </div>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script src="./node_modules/vuex/dist/vuex.min.js"></script>
+    <script src="./node_modules/vue-resource/dist/vue-resource.min.js"></script>
+    <script src="./node_modules/moment/min/moment.min.js"></script>
+    <script src="./store.js"></script>
+    <script src="./filters/date.js"></script>
+    <script src="./components/user-view.js"></script>
+    <script src="./components/repository-list.js"></script>
+    <script src="./components/commits-list.js"></script>
+    <script src="./components/search.js"></script>
+    <script src="./components/error.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
