@@ -30,21 +30,6 @@
                     store.commit('increaseCount');
                     store.commit('updatePage', { isOk: data.ok, status: data.statusText, message: data.body.message });
                 });
-            },
-            mapUser: function(user) {
-                let dateFormat = "DD/MM/YYYY";
-                return {
-                    login: user.login,
-                    avatar_url: user.avatar_url,
-                    html_url: user.html_url,
-                    name: user.name,
-                    bio: user.bio,
-                    followers: user.followers,
-                    following: user.following,
-                    created_at: moment(user.created_at).format(dateFormat),
-                    updated_at: moment(user.updated_at).format(dateFormat),
-                    repositories: []
-                };
             }
         },
         vuex: {
