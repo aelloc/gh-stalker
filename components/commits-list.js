@@ -45,7 +45,7 @@
         methods: {
             changeBranch: function(event) {
                 this.actual_branch = event.target.value;
-                this.$http.get(github.get.commitsAt(store.state.user.login, store.state.commits.repository, event.target.value)).then((data) => {
+                this.$http.get(github.commitsAt(store.state.user.login, store.state.commits.repository, event.target.value)).then((data) => {
                     store.commit('bindCommits', { commits: data.body, repository: store.state.commits.repository});
                 });
             }
