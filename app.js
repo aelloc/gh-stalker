@@ -3,7 +3,7 @@
 const github = {
     url: 'https://api.github.com',
     get: {
-        branchs: (owner, repository) => `http://api.github.com/repos/${owner}/${repository}/branches`,
+        branchs: (owner, repository) => `https://api.github.com/repos/${owner}/${repository}/branches`,
         commits: (owner, repository) => `https://api.github.com/repos/${owner}/${repository}/commits`,
         commitsAt: (owner, repository, branch) => `https://api.github.com/repos/${owner}/${repository}/commits?sha=${branch}`
     },
