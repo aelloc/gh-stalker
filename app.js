@@ -1,17 +1,6 @@
 'use strict';
 
-const github = {
-    url: 'https://api.github.com',
-    get: {
-        branchs: (owner, repository) => `https://api.github.com/repos/${owner}/${repository}/branches`,
-        commits: (owner, repository) => `https://api.github.com/repos/${owner}/${repository}/commits`,
-        commitsAt: (owner, repository, branch) => `https://api.github.com/repos/${owner}/${repository}/commits?sha=${branch}`
-    },
-    search: {
-        byUsername: (user) => `https://api.github.com/users/${user}`.trim(),
-        byUserRepositories: (user) => `https://api.github.com/users/${user}/repos`
-    }
-}
+const github = new GitHubAPI('https://api.github.com');
 
 const vm = new Vue({
     el: '#app',
