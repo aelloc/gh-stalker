@@ -7,11 +7,13 @@ var store = new Vuex.Store({
             isOk: false,
             message: '',
             status: '',
-            loading: false
+            loading: false,
+            userSelected: false
         },
         search: {
             term: '',
-            count: 0
+            count: 0,
+            users: []
         },
         user: {
             repositories: []
@@ -24,6 +26,9 @@ var store = new Vuex.Store({
         }
     },
     mutations: {
+        bindSearchResult: function(state, result) {
+            state.search.users = result.items;
+        },
         bindUser: function(state, user) {
             state.user = user;
         },
@@ -49,7 +54,8 @@ var store = new Vuex.Store({
                 isOk: stats.isOk,
                 status: stats.status,
                 message: stats.message,
-                loading: false
+                loading: false,
+                userSelected: stats.userSelected ? stats.userSelected : false
             };
         },
         isLoading: function(state) {

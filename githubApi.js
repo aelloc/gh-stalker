@@ -17,7 +17,7 @@ class GitHubAPI {
     }
 
     searchUser(user) {
-        return `${this._url}/users/${user}`;
+        return `${this._url}/search/users?utf8=%E2%9C%93&q=${user.replace(" ", "+")}`;
     }
 
     searchRepositories(user) {
