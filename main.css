@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Modeka';
+    src: url('./fonts/Modeka.otf');
+}
+
+.modeka {
+    font-family: 'Modeka';
+}
+
+.has-content-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.has-v-scroll {
+    overflow-y: auto; 
+}
+
+.is-blue {
+    color: #1E90FF;
+}
+
+.commit-msg {
+    color: #000;
+    text-decoration: none;
+    border-bottom: none!important;
+}
