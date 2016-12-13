@@ -20,7 +20,7 @@
 
                 store.commit('isLoading');
 
-                this.$http.get(github.search.byUsername(self.search.term)).then((data) => {
+                this.$http.get(github.searchUser(self.search.term)).then((data) => {
                     store.commit('bindUser', self.mapUser(data.body));
                     store.commit('increaseCount');
                     store.commit('updatePage', { isOk: data.ok, status: data.statusText, message: data.body.message });
