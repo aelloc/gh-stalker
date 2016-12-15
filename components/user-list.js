@@ -36,7 +36,7 @@
                 });
             },
             mapUser: function(user) {
-               let dateFormat = "DD/MM/YYYY";
+               let dateFormat = "DD/MM/YYYY hh:mm:ss";
                return {
                    login: user.login,
                    avatar_url: user.avatar_url,
