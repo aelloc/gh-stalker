@@ -40,20 +40,21 @@
                 <div v-if="search.count > 0 && !page.isOk" class="notification is-warning has-text-centered">
                     <error></error>
                 </div>
-                <div v-if="page.isOk && !page.userSelected">
-                    <users></users>
-                </div>
-                <div v-if="page.isOk && page.userSelected">
-                    <div class="columns has-text-centered">
-                        <div class="column has-content-centered">
-                            <user-view></user-view>
-                        </div>
-                        <div class="column">
-                            <repository-list></repository-list>
+                <div v-if="page.isOk">
+                    <div v-if="!page.userSelected">
+                        <users></users>
+                    </div>
+                    <div v-if="page.userSelected">
+                        <div class="columns has-text-centered">
+                            <div class="column has-content-centered">
+                                <user-view></user-view>
+                            </div>
+                            <div class="column">
+                                <repository-list></repository-list>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section v-if="page.isOk && page.userSelected && showCommits" class="section">
