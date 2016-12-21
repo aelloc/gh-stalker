@@ -13,7 +13,7 @@
                                     <i v-if="repository.fork" class="fa fa-code-fork"></i>
                                     <i v-else class="fa fa-book"></i>
                                 </span>
-                                <p>{{repository.name.trim()}}</p>
+                                <p>{{repository.name}}</p>
                             </a>
                         </div>
                     </nav>`,
