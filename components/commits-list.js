@@ -26,11 +26,13 @@
                                             <a class="commit-msg" target="_blank" :href="commit.html_url">{{commit.commit.message}}</a>
                                         </p>
                                     </div>
-                                </div>
-                                <div class="media-right">
-                                    <a class="level-item" :href="commit.html_url" target="_blank">
-                                        <span class="icon is-small"><i class="fa fa-comments"></i></span>
-                                    </a>
+                                    <nav class="level">
+                                        <div class="level-left">
+                                            <a class="level-item" :href="commit.html_url" target="_blank">
+                                                <span class="icon is-small"><i class="fa fa-comments"></i></span>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </article>
                         </div>
