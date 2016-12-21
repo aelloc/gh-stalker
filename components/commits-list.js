@@ -20,7 +20,8 @@
                                 <div class="media-content">
                                     <div class="content">
                                         <p>
-                                            <a target="_blank" :href="commit.committer.html_url"><strong>{{commit.commit.committer.name}}</strong></a> <small>{{commit.commit.committer.email}}</small> <small>{{commit.commit.committer.date | time from now }}</small>
+                                            <a target="_blank" :href="commit.committer.html_url"><strong class="is-block-mobile">{{commit.commit.committer.name}}</strong></a>
+                                            <small class="is-block-mobile">{{commit.commit.committer.email}}</small> <small>{{commit.commit.committer.date | time from now }}</small>
                                             <br>
                                             <a class="commit-msg" target="_blank" :href="commit.html_url">{{commit.commit.message}}</a>
                                         </p>
