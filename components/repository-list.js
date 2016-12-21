@@ -7,13 +7,15 @@
                             <span class="tag is-primary">{{repositories.length}}</span>
                             Repositories
                         </p>
-                        <a v-for="repository in repositories" v-on:click="getCommits" class="panel-block" :data-branch="repository.default_branch" href="#commits">
-                            <span class="panel-icon">
-                                <i v-if="repository.fork" class="fa fa-code-fork"></i>
-                                <i v-else class="fa fa-book"></i>
-                            </span>
-                            <p>{{repository.name.trim()}}</p>
-                        </a>
+                        <div class="scroll">
+                            <a v-for="repository in repositories" v-on:click="getCommits" class="panel-block" :data-branch="repository.default_branch" href="#commits">
+                                <span class="panel-icon">
+                                    <i v-if="repository.fork" class="fa fa-code-fork"></i>
+                                    <i v-else class="fa fa-book"></i>
+                                </span>
+                                <p>{{repository.name.trim()}}</p>
+                            </a>
+                        </div>
                     </nav>`,
         computed: {
             user: () => store.state.user.login,
