@@ -22,13 +22,14 @@
 
                 store.commit('isLoading');
 
-                this.$http.get(github.searchUser(self.search.term)).then((data) => {
-                    store.commit('bindSearchResult', data.body);
+
+                github.searchUser(self.search.term).then(response => {
+                    store.commit('bindSearchResult', response.data);
                     store.commit('increaseCount');
-                    store.commit('updatePage', { isOk: data.ok, status: data.statusText, message: data.body.message });
-                }, (data) => {
+                    store.commit('updatePage', { isOk: response.status == 200, status: response.statusText });
+                }, response => {
                     store.commit('increaseCount');
-                    store.commit('updatePage', { isOk: data.ok, status: data.statusText, message: data.body.message });
+                    store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.body.message });
                 });
             }
         },

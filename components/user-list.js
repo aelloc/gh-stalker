@@ -26,13 +26,13 @@
         methods: {
             getUser: function(e) {
                 let self = this;
-                this.$http.get(github.user(e.target.innerText)).then((data) => {
-                    store.commit('bindUser', self.mapUser(data.body));
-                    store.commit('updatePage', { isOk: data.ok, status: data.statusText, message: data.body.message, userSelected: true });
+                github.user(e.target.innerText).then(response => {
+                    store.commit('bindUser', self.mapUser(response.data));
+                    store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, userSelected: true });
                     store.dispatch('searchRepositories');
-                }, (data) => {
+                }, response => {
                     store.commit('increaseCount');
-                    store.commit('updatePage', { isOk: data.ok, status: data.statusText, message: data.body.message });
+                    store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.data.message, userSelected: true });
                 });
             },
             mapUser: function(user) {
