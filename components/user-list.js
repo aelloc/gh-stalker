@@ -31,8 +31,7 @@
                     store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, userSelected: true });
                     store.dispatch('searchRepositories');
                 }, response => {
-                    store.commit('increaseCount');
-                    store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.data.message, userSelected: true });
+                    store.commit('updatePage', { isOk: response.response == 200, status: response.response.statusText, message: response.response.data.message, userSelected: false });
                 });
             }
         }
