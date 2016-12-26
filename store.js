@@ -37,7 +37,7 @@ var store = new Vuex.Store({
         },
         bindCommits: function(state, data) {
             state.commits = {
-                repository: data.repository,
+                repository: data.repository.trim(),
                 branchs: state.commits.branchs,
                 commits: data.commits,
                 show: data.commits.length > 0
