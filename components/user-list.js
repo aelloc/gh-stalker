@@ -26,7 +26,7 @@
         methods: {
             getUser: function(e) {
                 let self = this;
-                github.user(e.target.innerText).then(response => {
+                $github.user(e.target.innerText).then(response => {
                     store.commit('bindUser', $user.map(response.data));
                     store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, userSelected: true });
                     store.dispatch('searchRepositories');
