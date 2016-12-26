@@ -40,11 +40,11 @@
         computed: {
             selected: () => '',
             commits: () => store.state.commits,
-            default_branch: () => store.state.user.repositories.filter((repository) => repository.name == store.state.commits.repository)[0].default_branch
+            default_branch: () => store.state.user.repositories.filter(repository => repository.name == store.state.commits.repository)[0].default_branch
         },
         data: () => {
             return {
-                actual_branch: store.state.user.repositories.filter((repository) => repository.name == store.state.commits.repository)[0].default_branch
+                actual_branch: store.state.user.repositories.filter(repository => repository.name == store.state.commits.repository)[0].default_branch
             }
         },
         methods: {
