@@ -23,7 +23,7 @@
                 store.commit('isLoading');
 
 
-                github.searchUser(self.search.term).then(response => {
+                $github.searchUser(self.search.term).then(response => {
                     store.commit('bindSearchResult', response.data);
                     store.commit('increaseCount');
                     store.commit('updatePage', { isOk: response.status == 200, status: response.statusText });

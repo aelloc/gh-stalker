@@ -24,7 +24,7 @@
         methods: {
             getCommits: function(event) {
                 let self = this;
-                github.commits(self.user, event.target.innerText.trim()).then(response => {
+                $github.commits(self.user, event.target.innerText.trim()).then(response => {
                     store.commit('bindCommits', { commits: response.data, repository: event.target.innerText });
                     store.dispatch('getBranchs', event.target.innerText);
                 });

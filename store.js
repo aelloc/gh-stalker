@@ -67,12 +67,12 @@ var store = new Vuex.Store({
             if(!store.state.user.login)
                 return;
             
-            github.searchRepositories(store.state.user.login).then(response => {
+            $github.searchRepositories(store.state.user.login).then(response => {
                 store.commit('bindRepositories', response.data);
             });
         },
         getBranchs: (state, repository) => {
-            github.branchs(store.state.user.login, repository).then(response => {
+            $github.branchs(store.state.user.login, repository).then(response => {
                 store.commit('bindBranchs', response.data);
             });
         }

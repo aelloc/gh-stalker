@@ -50,7 +50,7 @@
         methods: {
             changeBranch: function(event) {
                 this.actual_branch = event.target.value;
-                github.commitsAt(store.state.user.login, store.state.commits.repository, event.target.value).then(response => {
+                $github.commitsAt(store.state.user.login, store.state.commits.repository, event.target.value).then(response => {
                     store.commit('bindCommits', { commits: response.data, repository: store.state.commits.repository});
                 });
             }
