@@ -1,6 +1,6 @@
 'use strict';
 
-const github = new GitHubAPI('https://api.github.com');
+const github = new GitHubService('https://api.github.com');
 
 const vm = new Vue({
     el: '#app',
