@@ -1,5 +1,5 @@
 class UserService {
-    map(user) {
+    mapAsUser(user) {
         let dateFormat = "DD/MM/YYYY hh:mm:ss";
         return {
             login: user.login,
