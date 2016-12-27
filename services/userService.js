@@ -1,6 +1,5 @@
 class UserService {
     mapAsUser(user) {
-        let dateFormat = "DD/MM/YYYY hh:mm:ss";
         return {
             login: user.login,
             avatar_url: user.avatar_url,
@@ -9,8 +8,8 @@ class UserService {
             bio: user.bio,
             followers: user.followers,
             following: user.following,
-            created_at: moment(user.created_at).format(dateFormat),
-            updated_at: moment(user.updated_at).format(dateFormat),
+            created_at: user.created_at,
+            updated_at: user.updated_at,
             repositories: []
         };
     }
