@@ -25,7 +25,7 @@
                                 <br>
                                 <p>{{user.bio}}</p>
                                 <br>
-                                <small>Created at {{ user.created_at }}</small>
+                                <small>Created {{ user.created_at | time from now }}</small>
                             </div>
                         </div>
                     </div>`,
