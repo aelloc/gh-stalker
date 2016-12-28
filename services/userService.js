@@ -14,4 +14,20 @@ class UserService {
             repositories: []
         };
     }
+
+    mapAsOrganization(org) {
+        return {
+            login: org.login,
+            avatar_url: org.avatar_url,
+            html_url: org.html_url,
+            name: org.name,
+            blog: org.blog,
+            bio: org.bio,
+            type: org.type,
+            created_at: org.created_at,
+            updated_at: org.updated_at,
+            public_repos: org.public_repos,
+            repositories: []
+        };
+    }
 }
