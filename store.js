@@ -83,6 +83,8 @@ var store = new Vuex.Store({
             
             $github.searchRepositories(store.state.user.login).then(response => {
                 store.commit('bindRepositories', response.data);
+            }, response => {
+                store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.body.message });
             });
         },
         getBranchs: (state, repository) => {
