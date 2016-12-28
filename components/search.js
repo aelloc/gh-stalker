@@ -22,7 +22,6 @@
 
                 store.commit('isLoading');
 
-
                 $github.searchUser(self.search.term).then(response => {
                     store.commit('bindSearchResult', response.data);
                     store.commit('increaseCount');
