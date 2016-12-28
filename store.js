@@ -89,21 +89,21 @@ var store = new Vuex.Store({
             
             $github.searchRepositories(store.state.user.login).then(response => {
                 store.commit('bindRepositories', response.data);
-            }, response => {
+            }).catch(response => {
                 store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.body.message });
             });
         },
         getBranchs: (store, repository) => {
             $github.branchs(store.state.user.login, repository).then(response => {
                 store.commit('bindBranchs', response.data);
-            }, response => {
+            }).catch(response => {
                 store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.body.message });
             });
         },
         getCommitComments: (store, sha) => {
             $github.commitComments(store.state.user.login, store.state.commits.repository, sha).then(response => {
                 store.commit('bindComments', { sha: sha, comments: response.data });
-            }, response => {
+            }).catch(response => {
                 store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.body.message });
             });
         }
