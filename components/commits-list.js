@@ -28,7 +28,7 @@
                                     </div>
                                     <nav class="level">
                                         <div class="level-left">
-                                            <a class="level-item" :href="commit.html_url" target="_blank">
+                                            <a class="level-item" v-on:click="getComments(commit.sha)">
                                                 <span class="icon is-small"><i class="fa fa-comments"></i></span>
                                             </a>
                                         </div>
@@ -53,6 +53,9 @@
                 $github.commitsAt(store.state.user.login, store.state.commits.repository, event.target.value).then(response => {
                     store.commit('bindCommits', { commits: response.data, repository: store.state.commits.repository});
                 });
+            },
+            getComments: function(sha) {
+                    store.dispatch('getCommitComments', sha);
             }
         }
     });
