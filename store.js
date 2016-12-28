@@ -87,7 +87,7 @@ var store = new Vuex.Store({
                 store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.body.message });
             });
         },
-        getBranchs: (state, repository) => {
+        getBranchs: (store, repository) => {
             $github.branchs(store.state.user.login, repository).then(response => {
                 store.commit('bindBranchs', response.data);
         },
