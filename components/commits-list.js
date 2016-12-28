@@ -32,6 +32,8 @@
                                                 <span class="icon is-small"><i class="fa fa-comments"></i></span>
                                             </a>
                                         </div>
+                                    <div v-if="showComments">
+                                        <comments-list></comments-list>
                                     </div>
                                 </div>
                             </article>
@@ -44,6 +46,7 @@
         },
         data: () => {
             return {
+                showComments: false,
                 actual_branch: store.state.user.repositories.filter(repository => repository.name == store.state.commits.repository)[0].default_branch
             }
         },
@@ -55,6 +58,9 @@
                 });
             },
             getComments: function(sha) {
+                this.showComments = !this.showComments;
+                
+                if(this.showComments)
                     store.dispatch('getCommitComments', sha);
             }
         }
