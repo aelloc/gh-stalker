@@ -20,10 +20,17 @@
                                 </div>
                             </div>
                             <div class="content">
-                                Followers <span class="tag is-success">{{user.followers}}</span>
-                                Following <span class="tag is-info">{{user.following}}</span>
-                                <br>
-                                <p>{{user.bio}}</p>
+                                <div v-if="user.type === 'User'">
+                                    Followers <span class="tag is-success">{{user.followers}}</span>
+                                    Following <span class="tag is-info">{{user.following}}</span>
+                                    <br>
+                                    <p>{{user.bio}}</p>
+                                </div>
+                                <div v-else-if="user.type === 'Organization'">
+                                    <a :href="user.blog" target="_blank">{{user.blog}}</a>
+                                    <br>
+                                    Public repositories: <span class="tag is-success">{{user.public_repos}}</span>
+                                </div>
                                 <br>
                                 <small>Created {{ user.created_at | time from now }}</small>
                             </div>
