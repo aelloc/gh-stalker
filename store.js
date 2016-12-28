@@ -34,6 +34,12 @@ var store = new Vuex.Store({
             state.search.users = result.items;
         },
         bindUser: function(state, user) {
+            if(user.type === 'User') {
+                user = $user.mapAsUser(user);
+            } else if(user.type === 'Organization') {
+                user = $user.mapAsOrganization(user);
+            }
+            
             state.user = user;
         },
         bindRepositories: function(state, repositories) {
