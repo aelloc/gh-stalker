@@ -30,7 +30,7 @@
                     store.commit('bindUser', response.data);
                     store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, userSelected: true });
                     store.dispatch('searchRepositories');
-                }, response => {
+                }).catch(response => {
                     store.commit('updatePage', { isOk: response.response == 200, status: response.response.statusText, message: response.response.data.message, userSelected: false });
                 });
             }
