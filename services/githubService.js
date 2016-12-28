@@ -27,4 +27,8 @@ class GitHubService {
     user(user) {
         return axios.get(`${this._url}/users/${user}`);
     }
+
+    commitComments(owner, repo, ref) {
+        return axios.get(`${this._url}/repos/${owner}/${repo}/commits/${ref}/comments`);
+    }
 }
