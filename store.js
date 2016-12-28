@@ -22,6 +22,10 @@ var store = new Vuex.Store({
             repository: '',
             branchs: [],
             commits: [],
+            comments: {
+                sha: '',
+                comments: []
+            },
             show: false
         }
     },
@@ -40,11 +44,21 @@ var store = new Vuex.Store({
                 repository: data.repository.trim(),
                 branchs: state.commits.branchs,
                 commits: data.commits,
+                comments: {
+                    sha: '',
+                    comments: []
+                },
                 show: data.commits.length > 0
             }
         },
         bindBranchs: function(state, branchs) {
             state.commits.branchs = branchs;
+        },
+        bindComments: function(state, comments) {
+            state.commits.comments = {
+                sha: comments.sha,
+                comments: comments.comments
+            }
         },
         increaseCount: function(state) {
             state.search.count++;
@@ -74,6 +88,12 @@ var store = new Vuex.Store({
         getBranchs: (state, repository) => {
             $github.branchs(store.state.user.login, repository).then(response => {
                 store.commit('bindBranchs', response.data);
+        },
+        getCommitComments: (store, sha) => {
+            $github.commitComments(store.state.user.login, store.state.commits.repository, sha).then(response => {
+                store.commit('bindComments', { sha: sha, comments: response.data });
+            }, response => {
+                store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.body.message });
             });
         }
     }
