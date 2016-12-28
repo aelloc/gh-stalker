@@ -6,6 +6,7 @@ class UserService {
             html_url: user.html_url,
             name: user.name,
             bio: user.bio,
+            type: user.type,
             followers: user.followers,
             following: user.following,
             created_at: user.created_at,
