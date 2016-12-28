@@ -32,7 +32,7 @@
                                                 <span class="icon is-small"><i class="fa fa-comments"></i></span>
                                             </a>
                                         </div>
-                                    <div v-if="showComments">
+                                    <div v-if="commits.comments.sha === commit.sha && showComments">
                                         <comments-list></comments-list>
                                     </div>
                                 </div>
