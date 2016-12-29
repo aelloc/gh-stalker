@@ -1,4 +1,8 @@
 class UserService {
+    constructor(unk_avatar) {
+        this._unk_avatar = unk_avatar;
+    }
+
     mapAsUser(user) {
         return {
             login: user.login,
