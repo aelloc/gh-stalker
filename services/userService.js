@@ -34,4 +34,16 @@ class UserService {
             repositories: []
         };
     }
+
+    mapAsCommitter(data) {
+        data.committer = data.committer ? data.committer : {};
+        return {
+            avatar_url: data.committer.avatar_url || this._unk_avatar,
+            html_url: data.committer.html_url || '',
+            login: data.committer.login || '',
+            type: data.committer.type || 'User',
+            name: data.innerCommitter.name,
+            email: data.innerCommitter.email
+        };
+    }
 }
