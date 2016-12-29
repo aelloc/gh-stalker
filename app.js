@@ -1,7 +1,7 @@
 'use strict';
 
-const $github = new GitHubService('https://api.github.com');
-const $user = new UserService();
+const $github = new GitHubService('https://api.github.com', 'https://i2.wp.com/assets-cdn.github.com/images/gravatars/gravatar-user-420.png');
+const $user = new UserService($github.unk_avatar);
 
 const vm = new Vue({
     el: '#app',
