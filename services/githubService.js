@@ -1,7 +1,8 @@
 class GitHubService {
     
-    constructor(url) {
+    constructor(url, unk_avatar) {
         this._url = url;
+        this.unk_avatar = unk_avatar;
     }
 
     branchs(owner, repository) {
