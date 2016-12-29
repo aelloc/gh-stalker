@@ -39,13 +39,17 @@ const store = new Vuex.Store({
             } else if(user.type === 'Organization') {
                 user = $user.mapAsOrganization(user);
             }
-            
+
             state.user = user;
         },
         bindRepositories: function(state, repositories) {
             state.user.repositories = repositories;
         },
         bindCommits: function(state, data) {
+            data.commits.forEach(commit => {
+                commit.author = $user.mapAsCommitter({ committer: commit.author, innerCommitter: commit.commit.committer });
+            });
+
             state.commits = {
                 repository: data.repository.trim(),
                 branchs: state.commits.branchs,
