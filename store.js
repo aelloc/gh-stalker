@@ -1,6 +1,6 @@
 'use strict';
 
-var store = new Vuex.Store({
+const store = new Vuex.Store({
     strict: true,
     state: {
         page: {
