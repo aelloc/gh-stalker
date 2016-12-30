@@ -14,7 +14,7 @@
                                 <div class="content">
                                     <p>
                                         <a target="_blank" :href="commit.author.html_url"><strong class="is-block-mobile">{{commit.author.name}}</strong></a>
-                                        <small class="is-block-mobile">{{commit.author.email}}</small> <small>{{commit.author.date | time from now }}</small>
+                                        <small class="is-block-mobile">{{commit.author.email}}</small> <small>{{commit.commit.author.date | time from now }}</small>
                                         <br>
                                         <a class="commit-msg" target="_blank" :href="commit.html_url">{{commit.commit.message}}</a>
                                     </p>
