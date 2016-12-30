@@ -11,7 +11,7 @@
                         <p>{{repository.name}}</p>
                     </a>`,
         computed: {
-            user: () => store.state.user.user.login
+            user: () => store.getters.user
         },
         methods: {
             commits: function(event) {

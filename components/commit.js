@@ -35,7 +35,7 @@
                         </article>
                     </div>`,
         computed: {
-            sha_comments: () => store.state.commits.comments.sha
+            sha_comments: () => store.getters.commit_sha
         },
         data: () => {
             return {

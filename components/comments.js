@@ -8,7 +8,7 @@
                         </div>
                     </div>`,
             computed: {
-                commit_sha: () => store.state.commits.comments.sha,
+                commit_sha: () => store.getters.commit_sha,
                 comments: () => store.state.commit.comments.comments
             }
     });

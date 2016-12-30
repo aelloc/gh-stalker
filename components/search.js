@@ -14,7 +14,7 @@
                         </p>
                     </div>`,
         computed: {
-            isLoading: () => store.state.page.loading
+            isLoading: () => store.getters.page_loading
         },
         methods: {
             search: function() {
