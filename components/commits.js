@@ -6,14 +6,15 @@
                         <p class="control">
                             <span class="select">
                                 <select v-on:change="changeBranch" v-model="actual_branch">calvingerling
-                                    <option v-for="branch in commit.branchs" :value="branch.name">{{branch.name}}</option>
+                                    <option v-for="branch in branchs" :value="branch.name">{{branch.name}}</option>
                                 </select>
                             </span>
                         </p>
-                        <commit v-for="c in commits.commits" :commit="c"></commit>
+                        <commit v-for="c in commits" :commit="c"></commit>
                     </div>`,
         computed: {
-            commits: () => store.state.commits,
+            commits: () => store.state.commit.commits,
+            branchs: () => store.state.commit.branchs,
             default_branch: () => store.state.user.repositories.filter(repository => repository.name == store.state.commit.repository)[0].default_branch
         },
         data: () => {
