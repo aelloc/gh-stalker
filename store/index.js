@@ -2,8 +2,8 @@
 
 const store = (function() {
     return new Vuex.Store({
+        actions,
         strict: true,
-        actions: actions,
         modules: {
             page,
             search,
