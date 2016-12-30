@@ -30,10 +30,10 @@ const commit = {
             state.show = data.commits.length > 0;
         },
         bindBranchs: function (state, branchs) {
-            state.commits.branchs = branchs;
+            state.branchs = branchs;
         },
         bindComments: function (state, comments) {
-            state.commits.comments = {
+            state.comments = {
                 sha: comments.sha,
                 comments: comments.comments
             }
