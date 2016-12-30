@@ -7,12 +7,12 @@
     "url": "https://github.com/calvingerling/gh-stalker/issues"
   },
   "license": "Apache-2.0",
+  "author": "calvin.gerling",
   "main": "app.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/calvingerling/gh-stalker"
   },
-  "author": "calvin.gerling",
   "devDependencies": {
     "axios": "^0.15.3",
     "bulma": "^0.2.3",
