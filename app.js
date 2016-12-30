@@ -8,7 +8,7 @@ const vm = new Vue({
     computed: {
         page: () => store.state.page,
         search: () => store.state.search,
-        showCommits: () => store.state.commits.show
+        showCommits: () => store.state.commit.show
     },
     methods: {
         moment: (...args) => moment(...args)
