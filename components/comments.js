@@ -9,7 +9,7 @@
                     </div>`,
             computed: {
                 commit_sha: () => store.state.commits.comments.sha,
-                comments: () => store.state.commits.comments.comments
+                comments: () => store.state.commit.comments.comments
             }
     });
 })();

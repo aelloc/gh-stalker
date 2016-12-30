@@ -46,7 +46,7 @@
             showComments: function(sha) {
                 this.show = !this.show;
                 
-                if(this.show && sha != store.state.commits.comments.sha)
+                if(this.show && sha != store.state.commit.comments.sha)
                     store.dispatch('getCommitComments', sha);
             }
         }
