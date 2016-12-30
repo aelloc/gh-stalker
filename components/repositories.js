@@ -12,7 +12,7 @@
                         </div>
                     </nav>`,
         computed: {
-            user: () => store.state.user.login,
+            user: () => store.state.user.user.login,
             repositories: () => store.state.user.repositories
         },
         methods: {
