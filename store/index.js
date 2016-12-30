@@ -3,6 +3,7 @@
 const store = (function() {
     return new Vuex.Store({
         actions,
+        getters,
         strict: true,
         modules: {
             page,
