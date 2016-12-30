@@ -35,7 +35,7 @@
                         </div>
                     </div>`,
         computed: {
-            user: () => store.state.user
+            user: () => store.state.user.user
         }
     });
 })();
