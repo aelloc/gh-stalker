@@ -1,17 +1,15 @@
 {
   "name": "vue-js-app",
-  "version": "0.5.0",
-  "description": "Experimental app to taste vue.js",
+  "version": "0.8.3",
+  "description": "GitHub search and repositories/branchs latest commits visualization.",
+  "keywords": [ "vue", "bulma", "github", "stalker" ],
+  "license": "Apache-2.0",
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "none"
+    "url": "https://github.com/calvingerling/gh-stalker"
   },
-  "keywords": [
-    "vue"
-  ],
   "author": "calvin.gerling",
-  "license": "UNLICENSED",
   "devDependencies": {
     "axios": "^0.15.3",
     "bulma": "^0.2.3",
