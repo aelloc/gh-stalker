@@ -1,20 +1,14 @@
 'use strict';
 
 (function() {
-    Vue.component('repository-list', {
+    Vue.component('repositories', {
         template: `<nav class="panel">
                         <p class="panel-heading">
                             <span class="tag is-primary">{{repositories.length}}</span>
                             Repositories
                         </p>
                         <div class="scroll">
-                            <a v-for="repository in repositories" v-on:click="getCommits" class="panel-block" :data-branch="repository.default_branch" href="#commits">
-                                <span class="panel-icon">
-                                    <i v-if="repository.fork" class="fa fa-code-fork"></i>
-                                    <i v-else class="fa fa-book"></i>
-                                </span>
-                                <p>{{repository.name}}</p>
-                            </a>
+                            <repository v-for="repo in repositories" :repository="repo"></repository>
                         </div>
                     </nav>`,
         computed: {
