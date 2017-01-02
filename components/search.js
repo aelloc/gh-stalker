@@ -4,7 +4,7 @@
     Vue.component('search', {
         template: `<div>
                         <label class="label">
-                            <a href="#result">
+                            <a>
                                 <i class="fa fa-user"></i>
                             </a>
                         </label>
@@ -19,7 +19,6 @@
         methods: {
             search: function() {
                 let self = this;
-
                 store.commit('isLoading');
 
                 $github.searchUser(self.search.term).then(response => {
