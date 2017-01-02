@@ -3,5 +3,5 @@ Search **users**, view their **repositories** and latest **commits** on each **b
 
 Based on Vue.js, Bulma and GitHub API
 
-## Install
+### Install
 * `$ npm install`
