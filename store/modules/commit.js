@@ -21,7 +21,6 @@ const commit = {
             });
 
             state.repository = data.repository.trim();
-            state.branchs = state.commits.branchs;
             state.commits = data.commits;
             state.comments = {
                 sha: '',
