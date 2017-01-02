@@ -12,7 +12,7 @@
                                 </div>
                                 <div class="media-content">
                                     <p class="title is-5">
-                                        <a target="_blank" v-bind:href="user.html_url">{{user.name}}</a>
+                                        <a target="_blank" :href="user.html_url">{{user.name}}</a>
                                     </p>
                                     <p class="subtitle is-6">{{user.login}}</p>
                                 </div>
