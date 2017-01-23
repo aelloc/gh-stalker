@@ -17,7 +17,7 @@ const commit = {
     mutations: {
         bindCommits(state, data) {
             data.commits.forEach(commit => {
-                commit.author = $user.mapAsCommitter({ committer: commit.author, innerCommitter: commit.commit.committer });
+                commit.author = $user.asCommitter({ committer: commit.author, innerCommitter: commit.commit.committer });
             });
 
             state.repository = data.repository.trim();
