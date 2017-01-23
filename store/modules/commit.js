@@ -15,26 +15,26 @@ const commit = {
         showCommits: () => state.show
     },
     mutations: {
-        bindCommits(state, data) {
-            data.commits.forEach(commit => {
+        bindCommits(state, { repository, commits }) {
+            commits.forEach(commit => {
                 commit.author = $user.asCommitter({ committer: commit.author, innerCommitter: commit.commit.committer });
             });
 
-            state.repository = data.repository.trim();
-            state.commits = data.commits;
+            state.repository = repository.trim();
+            state.commits = commits;
             state.comments = {
                 sha: '',
                 comments: []
             };
-            state.show = data.commits.length > 0;
+            state.show = commits.length > 0;
         },
-        bindBranchs(state, branchs) {
+        bindBranchs(state, branchs = []) {
             state.branchs = branchs;
         },
-        bindComments(state, comments) {
+        bindComments(state, { sha, comments}) {
             state.comments = {
-                sha: comments.sha,
-                comments: comments.comments
+                sha: sha,
+                comments: comments
             }
         }
     }
