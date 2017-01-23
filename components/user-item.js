@@ -20,11 +20,11 @@
         methods: {
             gotoProfile (e) {
                 $github.user(e.target.innerText.trim()).then(response => {
-                    store.commit('bindUser', response.data);
-                    store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, userSelected: true });
+                    store.commit(types.UPDATE.USER, response.data);types.UPDATE.USER
+                    store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText, userSelected: true });
                     store.dispatch('searchRepositories');
                 }).catch(response => {
-                    store.commit('updatePage', { isOk: response.response == 200, status: response.response.statusText, message: response.response.data.message, userSelected: false });
+                    store.commit(types.UPDATE.PAGE, { isOk: response.response == 200, status: response.response.statusText, message: response.response.data.message, userSelected: false });
                 });
             }
         }

@@ -18,7 +18,8 @@
                 let self = this;
                 let repository = event.target.innerText.trim();
                 $github.commits(self.user, repository).then(response => {
-                    store.commit('bindCommits', { commits: response.data, repository: repository });
+                    store.commit(types.UPDATE.COMMITS, { commits: response.data, repository: repository });
+                    store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText });
                     store.dispatch('getBranchs', repository);
                 });
             }

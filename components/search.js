@@ -19,15 +19,15 @@
         methods: {
             search () {
                 let self = this;
-                store.commit('isLoading');
+                store.commit(types.PAGE_IS_LOADING);
 
                 $github.searchUser(self.search.term).then(response => {
-                    store.commit('bindSearchResult', response.data);
-                    store.commit('increaseCount');
-                    store.commit('updatePage', { isOk: response.status == 200, status: response.statusText });
+                    store.commit(types.UPDATE.SEARCH_RESULT, response.data);
+                    store.commit(types.INCREASE_SEARCH_COUNT);
+                    store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText });
                 }, response => {
-                    store.commit('increaseCount');
-                    store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, message: response.body.message });
+                    store.commit(types.INCREASE_SEARCH_COUNT);
+                    store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText, message: response.body.message });
                 });
             }
         },
