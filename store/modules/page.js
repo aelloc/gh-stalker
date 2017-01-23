@@ -9,14 +9,14 @@ const page = {
         userSelected: false
     },
     mutations: {
-        updatePage(state, stats = {}) {
+        [types.UPDATE.PAGE] (state, stats = {}) {
             state.isOk = stats.isOk;
             state.status = stats.status;
-            state.message = stats.message || "";
+            state.message = stats.message || '';
             state.loading = stats.loading || false;
             state.userSelected = stats.userSelected || false;
         },
-        isLoading(state) {
+        [types.PAGE_IS_LOADING] (state) {
             state.loading = true;
         }
     }
