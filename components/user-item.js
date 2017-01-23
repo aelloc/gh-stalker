@@ -22,7 +22,7 @@
                 store.commit(types.PAGE_IS_LOADING);
                 
                 $github.user(e.target.innerText.trim()).then(response => {
-                    store.commit(types.UPDATE.USER, response.data);types.UPDATE.USER
+                    store.commit(types.UPDATE.USER, response.data);
                     store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText, userSelected: true });
                     store.dispatch('searchRepositories');
                 }).catch(response => {
