@@ -5,7 +5,7 @@
         template: `<div>
                         <p class="control">
                             <span class="select">
-                                <select v-on:change="changeBranch" v-model="actual_branch">calvingerling
+                                <select v-on:change="changeBranch" v-model="actual_branch">
                                     <option v-for="branch in branchs" :value="branch.name">{{branch.name}}</option>
                                 </select>
                             </span>
