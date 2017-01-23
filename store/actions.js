@@ -11,7 +11,7 @@ const actions = {
             store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText, message: response.body.message });
         });
     },
-    getBranchs (store, repository = {}) {
+    getBranchs (store, repository = '') {
         $github.branchs(store.state.user.user.login, repository).then(response => {
             store.commit(types.UPDATE.BRANCHS, response.data);
         }).catch(response => {
