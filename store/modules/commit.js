@@ -15,7 +15,7 @@ const commit = {
         showCommits: () => state.show
     },
     mutations: {
-        bindCommits: function (state, data) {
+        bindCommits(state, data) {
             data.commits.forEach(commit => {
                 commit.author = $user.mapAsCommitter({ committer: commit.author, innerCommitter: commit.commit.committer });
             });
@@ -28,10 +28,10 @@ const commit = {
             };
             state.show = data.commits.length > 0;
         },
-        bindBranchs: function (state, branchs) {
+        bindBranchs(state, branchs) {
             state.branchs = branchs;
         },
-        bindComments: function (state, comments) {
+        bindComments(state, comments) {
             state.comments = {
                 sha: comments.sha,
                 comments: comments.comments

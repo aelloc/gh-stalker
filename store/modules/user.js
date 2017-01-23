@@ -6,7 +6,7 @@ const user = {
         repositories: []
     },
     mutations: {
-        bindUser: function(state, user) {
+        bindUser(state, user) {
             if(user.type === 'User') {
                 user = $user.mapAsUser(user);
             } else if(user.type === 'Organization') {
@@ -16,7 +16,7 @@ const user = {
             state.user = user;
             state.repositories = [];
         },
-        bindRepositories: function(state, repositories) {
+        bindRepositories(state, repositories) {
             state.repositories = repositories;
         }
     }

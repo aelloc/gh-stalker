@@ -7,10 +7,10 @@ const search = {
         users: []
     },
     mutations: {
-        bindSearchResult: function(state, result) {
+        bindSearchResult(state, result) {
             state.users = result.items;
         },
-        increaseCount: function(state) {
+        increaseCount(state) {
             state.count++;
         }
     }
