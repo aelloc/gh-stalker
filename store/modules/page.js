@@ -9,7 +9,7 @@ const page = {
         userSelected: false
     },
     mutations: {
-        updatePage(state, stats) {
+        updatePage(state, stats = {}) {
             state.isOk = stats.isOk;
             state.status = stats.status;
             state.message = stats.message || "";
