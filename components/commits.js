@@ -24,6 +24,8 @@
         },
         methods: {
             changeBranch (event) {
+                store.commit(types.PAGE_IS_LOADING);
+                
                 this.actual_branch = event.target.value;
                 $github.commitsAt(store.state.user.user.login, store.state.commit.repository, event.target.value).then(response => {
                     store.commit(types.UPDATE.COMMITS, { commits: response.data, repository: store.state.commit.repository});

@@ -16,6 +16,8 @@
         methods: {
             commits (event) {
                 let self = this;
+                store.commit(types.PAGE_IS_LOADING);
+                
                 let repository = event.target.innerText.trim();
                 $github.commits(self.user, repository).then(response => {
                     store.commit(types.UPDATE.COMMITS, { commits: response.data, repository: repository });
