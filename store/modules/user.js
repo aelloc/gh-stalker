@@ -8,9 +8,9 @@ const user = {
     mutations: {
         bindUser(state, user) {
             if(user.type === 'User') {
-                user = $user.mapAsUser(user);
+                user = $user.asUser(user);
             } else if(user.type === 'Organization') {
-                user = $user.mapAsOrganization(user);
+                user = $user.asOrganization(user);
             }
 
             state.user = user;
