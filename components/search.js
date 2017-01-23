@@ -33,7 +33,7 @@
         },
         vuex: {
             getters: {
-                search: store => store.search,
+                search: store => store.search
             }
         },
     });
