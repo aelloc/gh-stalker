@@ -1,5 +1,4 @@
 class GitHubService {
-    
     constructor(url, unk_avatar) {
         this._url = url;
         this.unk_avatar = unk_avatar;
