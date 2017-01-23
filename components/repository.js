@@ -14,7 +14,7 @@
             user: () => store.getters.user
         },
         methods: {
-            commits: function(event) {
+            commits (event) {
                 let self = this;
                 let repository = event.target.innerText.trim();
                 $github.commits(self.user, repository).then(response => {
