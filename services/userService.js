@@ -3,7 +3,7 @@ class UserService {
         this._unk_avatar = unk_avatar;
     }
 
-    mapAsUser(user) {
+    asUser(user) {
         return {
             login: user.login,
             avatar_url: user.avatar_url,
@@ -19,7 +19,7 @@ class UserService {
         };
     }
 
-    mapAsOrganization(org) {
+    asOrganization(org) {
         return {
             login: org.login,
             avatar_url: org.avatar_url,
@@ -35,8 +35,8 @@ class UserService {
         };
     }
 
-    mapAsCommitter(data) {
-        data.committer = data.committer ? data.committer : {};
+    asCommitter(data) {
+        data.committer = data.committer ? data.committer : {}; 
         return {
             avatar_url: data.committer.avatar_url || this._unk_avatar,
             html_url: data.committer.html_url || '',
