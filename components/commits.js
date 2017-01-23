@@ -17,13 +17,13 @@
             branchs: () => store.state.commit.branchs,
             default_branch: () => store.state.user.repositories.filter(repository => repository.name == store.state.commit.repository)[0].default_branch
         },
-        data: () => {
+        data () {
             return {
                 actual_branch: store.state.user.repositories.filter(repository => repository.name == store.state.commit.repository)[0].default_branch
             }
         },
         methods: {
-            changeBranch: function(event) {
+            changeBranch (event) {
                 this.actual_branch = event.target.value;
                 $github.commitsAt(store.state.user.user.login, store.state.commit.repository, event.target.value).then(response => {
                     store.commit('bindCommits', { commits: response.data, repository: store.state.commit.repository});

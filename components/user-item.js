@@ -18,7 +18,7 @@
                         </div>
                     </div>`,
         methods: {
-            gotoProfile: function(e) {
+            gotoProfile (e) {
                 $github.user(e.target.innerText.trim()).then(response => {
                     store.commit('bindUser', response.data);
                     store.commit('updatePage', { isOk: response.status == 200, status: response.statusText, userSelected: true });

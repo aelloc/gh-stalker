@@ -17,7 +17,7 @@
             isLoading: () => store.getters.page_loading
         },
         methods: {
-            search: function() {
+            search () {
                 let self = this;
                 store.commit('isLoading');
 

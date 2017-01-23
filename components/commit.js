@@ -37,13 +37,13 @@
         computed: {
             sha_comments: () => store.getters.commit_sha
         },
-        data: () => {
+        data() {
             return {
                 show: false
             }
         },
         methods: {
-            showComments: function(sha) {
+            showComments (sha) {
                 this.show = !this.show;
                 
                 if(this.show && sha != store.state.commit.comments.sha)
