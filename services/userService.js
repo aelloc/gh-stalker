@@ -35,15 +35,15 @@ class UserService {
         };
     }
 
-    asCommitter(data) {
-        data.committer = data.committer ? data.committer : {}; 
+    asCommitter({ committer, innerCommitter }) {
+        committer = committer ? committer : {};  
         return {
-            avatar_url: data.committer.avatar_url || this._unk_avatar,
-            html_url: data.committer.html_url || '',
-            login: data.committer.login || '',
-            type: data.committer.type || 'User',
-            name: data.innerCommitter.name,
-            email: data.innerCommitter.email
+            avatar_url: committer.avatar_url || this._unk_avatar,
+            html_url: committer.html_url || '',
+            login: committer.login || '',
+            type: committer.type || 'User',
+            name: innerCommitter.name,
+            email: innerCommitter.email
         };
     }
 }
