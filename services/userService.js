@@ -36,7 +36,7 @@ class UserService {
     }
 
     asCommitter({ committer, innerCommitter }) {
-        committer = committer ? committer : {};  
+        committer = committer || {};
         return {
             avatar_url: committer.avatar_url || this._unk_avatar,
             html_url: committer.html_url || '',
