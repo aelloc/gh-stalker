@@ -21,7 +21,10 @@
                 let repository = event.target.innerText.trim();
                 $github.commits(self.user, repository).then(response => {
                     store.commit(types.UPDATE.COMMITS, { commits: response.data, repository: repository });
-                    store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText });
+                    store.commit(types.UPDATE.PAGE, { 
+                        isOk: response.status == 200,
+                        status: response.statusText,
+                        userSelected: true });
                     store.dispatch('getBranchs', repository);
                 });
             }
