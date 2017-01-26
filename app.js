@@ -1,16 +1,17 @@
-'use strict';
+import Vue from 'vue';
+import store from './store';
+import GitHubService from './services/githubService';
+import UserService from './services/userService';
+import { date, timeFromNow } from './filters/date';
+import App from './components/app.vue';
 
-const $github = new GitHubService('https://api.github.com', 'https://i2.wp.com/assets-cdn.github.com/images/gravatars/gravatar-user-420.png');
-const $user = new UserService($github.unk_avatar);
+Vue.filter('date', date);
+Vue.filter('time from now', timeFromNow);
 
-const vm = new Vue({
+new Vue({
     el: '#app',
-    computed: {
-        page: () => store.state.page,
-        search: () => store.state.search,
-        showCommits: () => store.state.commit.show
-    },
-    methods: {
-        moment: (...args) => moment(...args)
-    }
+    store,
+    render: h => h(App)
 });
+
+require('./main.scss');
