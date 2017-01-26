@@ -1,34 +1,11 @@
-class GitHubService {
-    constructor(url, unk_avatar) {
-        this._url = url;
-        this.unk_avatar = unk_avatar;
-    }
+import Https from './https';
 
-    branchs(owner = '', repository = '') {
-        return axios.get(`${this._url}/repos/${owner}/${repository}/branches`);
-    }
+const default_unk_avatar = 'https://i2.wp.com/assets-cdn.github.com/images/gravatars/gravatar-user-420.png';
 
-    commits(owner = '', repository = '') {
-        return axios.get(`${this._url}/repos/${owner}/${repository}/commits`);
-    }
-
-    commitsAt(owner = '', repository = '', branch = '') {
-        return axios.get(`${this._url}/repos/${owner}/${repository}/commits?sha=${branch}`);
-    }
-
-    searchUser(user = '') {
-        return axios.get(`${this._url}/search/users?utf8=%E2%9C%93&q=${user.replace(" ", "+")}`);
-    }
-
-    searchRepositories(user = '') {
-        return axios.get(`${this._url}/users/${user}/repos`);
-    }
-
-    user(user = '') {
-        return axios.get(`${this._url}/users/${user}`);
-    }
-
-    commitComments(owner = '', repo = '', ref = '') {
-        return axios.get(`${this._url}/repos/${owner}/${repo}/commits/${ref}/comments`);
-    }
-}
+export const branchs = (owner = '', repository = '') => Https.get(`/repos/${owner}/${repository}/branches`);
+export const commits = (owner = '', repository = '') => Https.get(`/repos/${owner}/${repository}/commits`);
+export const commitsAt = (owner = '', repository = '', branch = '') => Https.get(`/repos/${owner}/${repository}/commits?sha=${branch}`);
+export const searchUser = (user = '') => Https.get(`/search/users?utf8=%E2%9C%93&q=${user.replace(" ", "+")}`);
+export const searchRepos = (user = '') => Https.get(`/users/${user}/repos`);
+export const user = (user = '') => Https.get(`/users/${user}`);
+export const commitComments = (owner = '', repo = '', ref = '') => Https.get(`/repos/${owner}/${repo}/commits/${ref}/comments`);
