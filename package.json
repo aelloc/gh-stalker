@@ -1,6 +1,6 @@
 {
-  "name": "vue-js-app",
-  "version": "0.8.3",
+  "name": "gh-stalker",
+  "version": "1.0.3",
   "description": "GitHub search and repositories/branchs latest commits visualization.",
   "keywords": [ "vue", "bulma", "github", "stalker" ],
   "bugs": {
