@@ -1,12 +1,9 @@
-'use strict';
+import moment from 'moment';
 
-(function() {
-    Vue.filter('date', function(value) {
-        return new Date(value).toLocaleDateString();
-    });
+export function date(value) {
+    return new Date(value).toLocaleDateString();
+};
 
-    Vue.filter('time from now', function(value) {
-        return moment(value).fromNow();
-    });
-})();
-
+export function timeFromNow(value) {
+    return moment(value).fromNow();
+};
