@@ -12,6 +12,8 @@
 </template>
 <script>
     import { mapState } from 'vuex';
+    import { commitsAt } from '../services/githubService';
+    import * as types from '../store/mutationTypes';
     import Commit from './Commit.vue';
 
     export default {
@@ -29,11 +31,12 @@
         },
         methods: {
             changeBranch(event) {
-                store.commit(types.PAGE_IS_LOADING);
+                let self = this, repository = this.$store.state.commit.repository;
+                this.$store.commit(types.PAGE_IS_LOADING);
 
                 this.actual_branch = event.target.value;
-                $github.commitsAt(store.state.user.user.login, store.state.commit.repository, event.target.value).then(response => {
-                    store.commit(types.UPDATE.COMMITS, { commits: response.data, repository: store.state.commit.repository });
+                commitsAt(this.$store.state.user.user.login, repository, event.target.value).then(response => {
+                    self.$store.commit(types.UPDATE.COMMITS, { commits: response.data, repository });
                 });
             }
         }
