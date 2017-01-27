@@ -14,7 +14,7 @@
     "url": "https://github.com/calvingerling/gh-stalker"
   },
   "scripts": {
-    "ci": "webpack --optimize-minimize --optimize-dedupe"
+    "ci": "webpack --optimize-minimize"
   },
   "dependencies": {
     "vue": "^2.1.10"
