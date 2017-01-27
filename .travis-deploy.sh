@@ -17,4 +17,4 @@ git commit -m "feat(gh-pages): deploy changes"
 # will be lost, since we are overwriting it.) We redirect any output to
 # /dev/null to hide any sensitive credential data that might otherwise be exposed.
 # tokens GH_TOKEN and GH_REF will be provided as Travis CI environment variables
-git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
