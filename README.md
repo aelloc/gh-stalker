@@ -1,7 +1,9 @@
-# gh-stalker
-Search **users**, view their **repositories** and latest **commits** on each **branch**.
+# gh-stalker [![Build Status](https://travis-ci.org/calvingerling/gh-stalker.svg?branch=master)](https://travis-ci.org/calvingerling/gh-stalker)
+Find **users** or **organizations** easily and navigate between the **latest commits** and their **comments** from each **branch** in the desired **repositories**.
 
-Based on Vue.js, Bulma and GitHub API
+Made with **[Vue.js](https://vuejs.org/)**, **[Bulma](http://bulma.io)**, **[Webpack](https://webpack.github.io)** and the **[GitHub API](https://developer.github.com/v3/)**.
 
 ### Install
-* `$ npm install`
+Take the following steps to be ready to develop:
+  * `$ npm install` or `$ yarn install`
+  * `$ webpack`
