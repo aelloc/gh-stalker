@@ -3,7 +3,7 @@ import store from './store';
 import GitHubService from './services/githubService';
 import UserService from './services/userService';
 import { date, timeFromNow } from './filters/date';
-import App from './components/app.vue';
+import App from './components/App.vue';
 
 Vue.filter('date', date);
 Vue.filter('time from now', timeFromNow);
