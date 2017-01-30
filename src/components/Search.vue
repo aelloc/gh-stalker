@@ -5,10 +5,12 @@
                 <i class="fa fa-user"></i>
             </a>
         </label>
-        <p class="control has-addons has-addons-centered">
-            <input v-model="search.term" class="input" type="text" placeholder="Find a user">
-            <a class="button is-info" v-bind:class="{ 'is-loading': isLoading }" v-on:click="search">Search</a>
-        </p>
+        <form v-on:submit="search">
+            <p class="control has-addons has-addons-centered">
+                <input v-model="search.term" class="input" type="text" placeholder="Find a user">
+                <button type="submit" class="button is-info" v-bind:class="{'is-loading': isLoading}">Search</a>
+            </p>
+        </form>
     </div>
 </template>
 <script>
@@ -21,7 +23,9 @@
             isLoading: 'page_loading'    
         }),
         methods: {
-            search() {
+            search(e) {
+                e.preventDefault();
+
                 let self = this;
                 self.$store.commit(types.PAGE_IS_LOADING);
                 
