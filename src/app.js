@@ -13,7 +13,7 @@ new Vue({
     el: '#app',
     store,
     router,
-    template: '<router-view></router-view>'
+    render: h => h(App)
 });
 
 require('./main.scss');
