@@ -8,7 +8,7 @@
         <form v-on:submit="search">
             <p class="control has-addons has-addons-centered">
                 <input v-model="search.term" class="input" type="text" placeholder="Find a user">
-                <button type="submit" class="button is-info" v-bind:class="{'is-loading': isLoading}">Search</a>
+                <button type="submit" class="button is-info" :class="{'is-loading': isLoading}">Search</a>
             </p>
         </form>
     </div>
