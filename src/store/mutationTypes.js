@@ -1,6 +1,5 @@
 export const UPDATE = {
     PAGE: 'updatePage',
-    SEARCH_RESULT: 'updateSearchResult',
     USER: 'updateUser',
     REPOS: 'updateRepos',
     COMMITS: 'updateCommits',
