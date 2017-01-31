@@ -5,7 +5,7 @@
                 <img :src="user.avatar_url" alt="User profile image">
             </figure>
         </div>
-        <div v-on:click="gotoProfile" class="card-content clickable">
+        <div class="card-content clickable">
             <div class="media">
                 <div class="media-content">
                     <p class="title is-5">{{ user.login }}</p>
