@@ -17,10 +17,9 @@
     import UserItem from './UserItem.vue';
 
     export default {
-        props: ['title'],
+        props: ['title', 'users'],
         components: { UserItem },
         computed: mapState({
-            users: state => state.search.users,
             pageOk: state => state.page.isOk
         })
     }
