@@ -1,6 +1,9 @@
 <template>
     <div>
-        <div v-if="qntRepos > 0">
+        <div v-if="qntRepos == 0">
+            <spinner></spinner>
+        </div>
+        <div v-else>
             <section class="section">
                 <div class="container">
                     <div class="columns has-text-centered">
