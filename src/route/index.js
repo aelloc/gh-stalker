@@ -10,7 +10,7 @@ export default new VueRouter({
     base: '/',
     routes: [
         { path: '/search', component: Search },
-        { path: '/profile/:user', component: Profile }
+        { path: '/profile/:username', component: Profile, props: true }
     ]
 });
 
