@@ -1,4 +1,4 @@
-import { searchRepos, branchs, commitComments } from '../services/githubService';
+import { searchRepos, branchs, commitComments, user } from '../services/githubService';
 import * as types from './mutationTypes';
 
 export const searchRepositories = function (store) {
@@ -28,3 +28,13 @@ export const getCommitComments = function (store, sha) {
         store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText, message: response.body.message });
     });
 };
+
+export const getUserInformations = function (store, username) {
+    user(username).then(response => {
+        store.commit(types.UPDATE.USER, response.data);
+        store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText, userSelected: true });
+        store.dispatch('searchRepositories');
+    }).catch(response => {
+        self.$store.commit(types.UPDATE.PAGE, { isOk: response.response == 200, status: response.statusText, message: response.data.message, userSelected: false });
+    });
+}
