@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import store from './store';
-import router from './route';
+import router from './router';
 import GitHubService from './services/githubService';
 import UserService from './services/userService';
 import { date, timeFromNow } from './filters/date';
