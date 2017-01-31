@@ -31,10 +31,11 @@
     import User from './User.vue';
     import Repositories from './Repositories.vue';
     import Commits from './Commits.vue';
+    import Spinner from './Spinner.vue';
 
     export default {
         props: ['username'],
-        components: { User, Repositories, Commits },
+        components: { User, Repositories, Commits, Spinner },
         computed: mapState({
             showCommits: state => state.commit.show,
             qntRepos: state => state.user.repositories.length
