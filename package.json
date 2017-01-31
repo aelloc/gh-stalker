@@ -17,7 +17,8 @@
     "ci": "webpack --optimize-minimize --optimize-dedupe"
   },
   "dependencies": {
-    "vue": "^2.1.10"
+    "file-loader": "^0.10.0",
+    "vue": "^2.1.10",
   },
   "devDependencies": {
     "axios": "^0.15.3",
