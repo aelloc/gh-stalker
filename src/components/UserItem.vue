@@ -8,7 +8,7 @@
         <div class="card-content clickable">
             <div class="media">
                 <div class="media-content">
-                    <p class="title is-5">{{ user.login }}</p>
+                    <router-link :to="'/profile/' + user.login" class="title is-5">{{ user.login }}</router-link>
                 </div>
             </div>
         </div>
