@@ -25,14 +25,20 @@
 </template>
 <script>
     import { mapState } from 'vuex';
+    import * as types from '../store/mutationTypes';
     import User from './User.vue';
     import Repositories from './Repositories.vue';
     import Commits from './Commits.vue';
 
     export default {
+        props: ['username'],
         components: { User, Repositories, Commits },
         computed: mapState({
             showCommits: state => state.commit.show
         })
+        created() {
+            this.$store.commit(types.PAGE_IS_LOADING);
+            this.$store.dispatch('getUserInformations', this.username);
+        }
     }
 </script>
