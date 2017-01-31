@@ -1,6 +1,9 @@
 <template>
     <section class="section">
         <div class="container">
+            <div class="heading">
+                <h1 class="title">{{ title }}</h1>
+            </div>
             <div class="columns is-multiline">
                 <div class="column is-one-third-tablet is-one-quarter-desktop has-text-centered" v-for="u in users">
                     <user-item :user="u"></user-item>
@@ -14,6 +17,7 @@
     import UserItem from './UserItem.vue';
 
     export default {
+        props: ['title'],
         components: { UserItem },
         computed: mapState({
             users: state => state.search.users,
