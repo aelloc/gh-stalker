@@ -10,7 +10,7 @@
                 </form>    
             </div>
         </section>
-        <div v-if="searchCount > 0">
+        <div v-if="searchCount > 0 && !userSelected">
             <users title="Search result" :users="result"></users>
         </div>
     </div>
@@ -33,7 +33,8 @@
                 isLoading: 'page_loading'
             }),
             ...mapState({
-                searchCount: state => state.search.count
+                searchCount: state => state.search.count,
+                userSelected: state => state.page.userSelected
             })
         },
         methods: {
