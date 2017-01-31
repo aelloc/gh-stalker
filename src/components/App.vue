@@ -22,19 +22,15 @@
                 </div>
             </div>
         </section>
-        <section class="section">
-            <div class="container">
-                <div v-if="search.count > 0 && !page.isOk" class="notification is-warning has-text-centered">
-                    <error></error>
-                </div>
-                <div v-if="page.isOk">
-                    <div v-if="!page.userSelected">
-                        <users></users>
-                    </div>
-                </div>
-            </div>
-        </section>
 
+        <div v-if="searchCount > 0 && !page.isOk">
+            <error></error>
+        </div>
+        <div v-if="page.isOk">
+            <div v-if="searchCount > 0 && !page.userSelected">
+                <users></users>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -47,7 +43,7 @@
         components: { Search, Error, Users },
         computed: mapState({
             page: state => state.page,
-            search: state => state.search.count,
+            searchCount: state => state.search.count,
             showCommits: state => state.commit.show
         })
     }
