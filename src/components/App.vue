@@ -31,28 +31,10 @@
                     <div v-if="!page.userSelected">
                         <users></users>
                     </div>
-                    <div v-else>
-                        <div class="columns has-text-centered">
-                            <div class="column has-content-centered">
-                                <user></user>
-                            </div>
-                            <div class="column">
-                                <repositories></repositories>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <section v-if="page.isOk && page.userSelected && showCommits" class="section">
-            <div class="container">
-                <div class="heading">
-                    <h1 class="title">Latest Commits</h1>
-                </div>
-                <commits></commits>
-            </div>
-        </section>
     </div>
 </template>
 <script>
@@ -60,12 +42,9 @@
     import Search from './Search.vue';
     import Error from './Error.vue';
     import Users from './Users.vue';
-    import User from './User.vue';
-    import Repositories from './Repositories.vue';
-    import Commits from './Commits.vue';
 
     export default {
-        components: { Search, Error, Users, User, Repositories, Commits },
+        components: { Search, Error, Users },
         computed: mapState({
             page: state => state.page,
             search: state => state.search.count,
