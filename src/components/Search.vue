@@ -55,11 +55,6 @@
                     self.$store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText, message: response.body.message });
                 });
             }
-        },
-        vuex: {
-            getters: {
-                search: store => store.search
-            }
         }
     }
 </script>
