@@ -5,13 +5,13 @@
                 <img :src="user.avatar_url" alt="User profile image">
             </figure>
         </div>
-        <div class="card-content clickable">
+        <router-link :to="'/profile/' + user.login" tag="div" class="card-content clickable">
             <div class="media">
                 <div class="media-content">
-                    <router-link :to="'/profile/' + user.login" class="title is-5">{{ user.login }}</router-link>
+                    <p class="title is-5">{{ user.login }}</p>
                 </div>
             </div>
-        </div>
+        </router-link>
     </div>
 </template>
 <script>
