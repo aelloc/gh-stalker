@@ -37,6 +37,6 @@ export const getUserInformations = function (store, username) {
         store.dispatch('searchRepositories');
         local.add(keys.MOST_VIEWED, { avatar_url: response.data.avatar_url, login: response.data.login });
     }).catch(response => {
-        self.$store.commit(types.UPDATE.PAGE, { isOk: response.response == 200, status: response.statusText, message: response.data.message, userSelected: false });
+        store.commit(types.UPDATE.PAGE, { isOk: response.response == 200, status: response.statusText, message: response.data.message, userSelected: false });
     });
 }
