@@ -10,13 +10,14 @@
                 </form>    
             </div>
         </section>
-        <div v-if="searchCount > 0 && !userSelected">
+        <div v-if="result.length > 0">
             <users title="Search result" :users="result"></users>
         </div>
     </div>
 </template>
 <script>
     import { mapGetters, mapState } from 'vuex';
+    import { keys, session } from '../services/storageService';
     import { searchUser } from '../services/githubService';
     import Users from './Users.vue';
     import * as types from '../store/mutationTypes';
@@ -24,7 +25,7 @@
     export default {
         data() {
             return {
-                result: []
+                result: (session.get(keys.LAST_SEARCH) || [])
             };
         },
         components: { Users },
@@ -46,7 +47,7 @@
 
                 searchUser(self.search.term).then(response => {
                     self.$data.result = response.data.items;
-
+                    session.set(keys.LAST_SEARCH, response.data.items);
                     self.$store.commit(types.INCREASE_SEARCH_COUNT);
                     self.$store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText });
                 }, response => {
