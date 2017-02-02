@@ -1,18 +1,18 @@
 <template>
-    <div class="card">
+    <router-link :to="'/profile/' + user.login" tag="div" class="card">
         <div class="card-image">
             <figure class="image is-3by3">
                 <img :src="user.avatar_url" alt="User profile image">
             </figure>
         </div>
-        <router-link :to="'/profile/' + user.login" tag="div" class="card-content clickable">
+        <div class="card-content clickable">
             <div class="media">
                 <div class="media-content">
                     <p class="title is-5">{{ user.login }}</p>
                 </div>
             </div>
-        </router-link>
-    </div>
+        </div>
+    </router-link>
 </template>
 <script>
     import { user } from '../services/githubService';
