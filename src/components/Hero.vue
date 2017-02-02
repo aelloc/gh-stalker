@@ -5,19 +5,19 @@
                 <nav class="nav">
                     <div class="container">
                         <div class="nav-left">
-                            <a class="nav-item" href="/">
+                            <router-link to="/" class="nav-item">
                                 <img src="../assets/images/logo.png">
-                            </a>
+                            </router-link>
                         </div>
                         <div class="nav-center">
-                            <a class="nav-item is-active" href="/">GH Stalker</a>
+                            <router-link to="/" class="nav-item is-active">GH Stalker</router-link>
                         </div>
                         <div class="nav-right nav-menu">
-                            <a class="nav-item" href="/#/search">
+                            <router-link to="/search" class="nav-item">
                                 <span class="icon">
-                                <i class="fa fa-search"></i>
-                            </span>
-                            </a>
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </router-link>
                             <a class="nav-item" target="_blank" href="//github.com">
                                 <span class="icon">
                                 <i class="fa fa-github"></i>
