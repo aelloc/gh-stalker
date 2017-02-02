@@ -47,11 +47,10 @@
     </div>
 </template>
 <script></script>
-<style>
+<style scoped>
     @media (min-width: 768px) {
         section.hero.is-info {
             display: none;
         }
     }
-    
 </style>
