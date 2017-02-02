@@ -20,8 +20,8 @@
                             </router-link>
                             <a class="nav-item" target="_blank" href="//github.com">
                                 <span class="icon">
-                                <i class="fa fa-github"></i>
-                            </span>
+                                    <i class="fa fa-github"></i>
+                                </span>
                             </a>
                         </div>
                     </div>
