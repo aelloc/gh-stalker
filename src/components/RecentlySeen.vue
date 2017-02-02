@@ -10,8 +10,10 @@
     export default {
         components: { Users },
         data() {
+            let mostViewed = local.get(keys.MOST_VIEWED) || [];
+            mostViewed = mostViewed.sort((a, b) => new Date(b.lastView) - new Date(a.lastView));
             return {
-                mostViewed: local.get(keys.MOST_VIEWED) || []
+                mostViewed
             }
         }
     }
