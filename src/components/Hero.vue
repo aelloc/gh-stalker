@@ -33,9 +33,9 @@
                 <nav class="nav">
                     <div class="container">
                         <div class="nav-center">
-                            <a class="nav-item" href="/#/search">
+                            <router-link to="/search" class="nav-item">
                                 <span class="icon"><i class="fa fa-search"></i></span>Search
-                            </a>
+                            </router-link>
                             <a class="nav-item" target="_blank" href="//github.com">
                                 <span class="icon"><i class="fa fa-github"></i></span>GitHub
                             </a>
