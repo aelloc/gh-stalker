@@ -22,5 +22,4 @@
         props: ['commentary']
     }
 </script>
-<style>
-</style>
+<style></style>
