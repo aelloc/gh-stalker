@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
     base: '/',
+    mode: 'history',
     routes: [
         { path: '/', component: RecentlySeen },
         { path: '/search', component: Search },
