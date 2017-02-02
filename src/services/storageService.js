@@ -8,10 +8,12 @@ export const local = {
             this.set(key, JSON.stringify([]));
             storageValue = [];
         }
-        
-        if (!storageValue.some(e => e.login == value.login))
-            storageValue.push(value);
-            this.set(key, storageValue);
+
+        let index = storageValue.findIndex(e => e.login == value.login);
+        if (index == -1) storageValue.push({ ...value, lastView: new Date()});
+        else storageValue[index].lastView = new Date();
+
+        this.set(key, storageValue);
     },
     set(key, value) {
         localStorage.setItem(key, JSON.stringify(value));
