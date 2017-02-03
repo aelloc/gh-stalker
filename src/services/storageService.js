@@ -34,5 +34,6 @@ export const session = {
 
 export const keys = {
     MOST_VIEWED: 'MOST_VIEWED',
-    LAST_SEARCH: 'LAST_SEARCH'
+    LAST_SEARCH: 'LAST_SEARCH',
+    SETTINGS: 'SETTINGS'
 }
