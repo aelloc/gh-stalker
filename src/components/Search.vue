@@ -2,7 +2,7 @@
     <div>
         <section class="section">
             <div class="container">
-                <form v-on:submit="search">
+                <form v-on:submit.prevent="search">
                     <p class="control has-addons has-addons-centered">
                         <input v-model="search.term" class="input" type="text" placeholder="Find a user">
                         <button type="submit" class="button is-success" :class="{'is-loading': isLoading}">Search</a>
@@ -39,9 +39,7 @@
             })
         },
         methods: {
-            search(e) {
-                e.preventDefault();
-                
+            search() {
                 let self = this;
                 self.$store.commit(types.PAGE_IS_LOADING);
 
