@@ -18,9 +18,6 @@ export const local = {
     set(key, value) {
         localStorage.setItem(key, JSON.stringify(value));
     },
-    clean(key) {
-        this.set(key, "");
-    },
     remove(key) {
         localStorage.removeItem(key);
     }
