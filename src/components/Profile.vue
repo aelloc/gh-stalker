@@ -7,7 +7,7 @@
             <section class="section">
                 <div class="container">
                     <div class="columns has-text-centered">
-                        <div class="column has-content-centered">
+                        <div class="column">
                             <user></user>
                         </div>
                         <div class="column">
