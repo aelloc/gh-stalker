@@ -14,7 +14,8 @@
     "url": "https://github.com/calvingerling/gh-stalker"
   },
   "scripts": {
-    "ci": "webpack --optimize-minimize --optimize-dedupe --define process.env.NODE_ENV=\"'production'\""
+    "ci": "webpack --optimize-minimize --optimize-dedupe --define process.env.NODE_ENV=\"'production'\"",
+    "dev": "webpack-dev-server"
   },
   "dependencies": {
     "file-loader": "^0.10.0",
