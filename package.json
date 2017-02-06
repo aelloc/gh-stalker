@@ -2,7 +2,16 @@
   "name": "gh-stalker",
   "version": "1.0.3",
   "description": "GitHub search and repositories/branchs latest commits visualization.",
-  "keywords": [ "vue", "bulma", "github", "stalker" ],
+  "keywords": [
+    "bulma",
+    "firebase",
+    "github",
+    "github-api",
+    "single-page-app",
+    "vue",
+    "vuejs",
+    "webpack"
+  ],
   "bugs": {
     "url": "https://github.com/calvingerling/gh-stalker/issues"
   },
