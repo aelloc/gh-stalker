@@ -1,7 +1,7 @@
 <template>
     <section class="section">
         <div class="content">
-            <notification :type="notification.type" :message="notification.message" :show="notification.show"></notification>
+            <notification :type="notification.type" :message="notification.message" :show="notification.show" @close="closeNotification"></notification>
             <h1>Settings</h1>
 
             <h2>Recently Seen</h2>
@@ -58,6 +58,9 @@
             },
             changeLastSearch(status) {
                 this.lastSearch = status;
+            },
+            closeNotification() {
+                this.notification.show = false;
             }
         }
     }

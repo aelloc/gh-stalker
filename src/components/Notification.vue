@@ -9,7 +9,7 @@
         props: ['message', 'type', 'show'],
         methods: {
             close() {
-                this.show = false;
+                this.$emit('close');
             }
         }
     }
