@@ -17,15 +17,18 @@
 </template>
 <script>
     import { mapGetters, mapState } from 'vuex';
-    import { keys, session } from '../services/storageService';
+    import { keys, session, local } from '../services/storageService';
     import { searchUser } from '../services/githubService';
     import Users from './Users.vue';
     import * as types from '../store/mutationTypes';
 
     export default {
         data() {
+            let getLastSearch = local.get(keys.SETTINGS);
+            getLastSearch = getLastSearch !== null ? getLastSearch.lastSearch : true;
+
             return {
-                result: (session.get(keys.LAST_SEARCH) || [])
+                result: getLastSearch ? (session.get(keys.LAST_SEARCH) || []) : []
             };
         },
         components: { Users },
