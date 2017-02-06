@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>{{title}}</p>
-        <button @click="change" class="button" :class="{'is-primary': enabled, 'is-danger': !enabled}">
+        <button @click="change" class="button" :class="{'is-info': enabled, 'is-danger': !enabled}">
             {{ enabled ? 'Enabled' : 'Disabled' }}
         </button>
     </div>
