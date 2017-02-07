@@ -25,8 +25,9 @@
         props: {
             title: String,
             users: [Object, Array],
-            total: Number,
-            paging: { type: Boolean, default: false }
+            total: { type: Number, default: 0},
+            paging: { type: Boolean, default: false },
+            actualPage: Number
         },
         computed: mapState({
             pageOk: state => state.page.isOk
