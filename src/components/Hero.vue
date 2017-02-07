@@ -56,6 +56,7 @@
             return {
                 actualPath: this.$route.path,
                 links: [
+                    { title: 'Home', type: 'internal', path: '/', icon: 'fa-home' },
                     { title: 'Search', type: 'internal', path: '/search', icon: 'fa-search' },
                     { title: 'Settings', type: 'internal', path: '/settings', icon: 'fa-cog' }
                 ]
