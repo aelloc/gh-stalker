@@ -10,7 +10,7 @@
                 </div>
             </div>
             <template v-if="paging">
-                <pagination @changePage="propagate" :last="Math.round(total / 30)"></pagination>
+                <pagination @changePage="propagate" :current="actualPage" :last="Math.round(total / 30)"></pagination>
             </template>
         </div>
     </section>
