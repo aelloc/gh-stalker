@@ -25,7 +25,7 @@
         props: {
             title: String,
             users: [Object, Array],
-            total: { type: Number, default: 0},
+            total: { type: Number, default: 0 },
             paging: { type: Boolean, default: false },
             actualPage: Number
         },
