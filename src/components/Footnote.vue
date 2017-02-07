@@ -18,4 +18,12 @@
     </footer>
 </template>
 <script></script>
-<style></style>
+<style scoped>
+    footer {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 1rem;
+    }
+</style>
