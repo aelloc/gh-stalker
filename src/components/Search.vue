@@ -11,7 +11,7 @@
             </div>
         </section>
         <div v-if="result.length > 0">
-            <users title="Search result" :users="result" :paging="true" :total="result_count" @changePage="changePage"></users>
+            <users title="Search result" :users="result" :paging="true" :actualPage="page" :total="result_count" @changePage="changePage"></users>
         </div>
     </div>
 </template>
