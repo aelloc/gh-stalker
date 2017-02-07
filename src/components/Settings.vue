@@ -1,7 +1,7 @@
 <template>
     <section class="section">
+        <notification :type="notification.type" :message="notification.message" :show="notification.show" @close="closeNotification"></notification>
         <div class="content">
-            <notification :type="notification.type" :message="notification.message" :show="notification.show" @close="closeNotification"></notification>
             <h1>Settings</h1>
 
             <h2>Recently Seen</h2>
