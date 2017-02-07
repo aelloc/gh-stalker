@@ -13,46 +13,63 @@
                             <router-link to="/" class="nav-item is-active">GH Stalker</router-link>
                         </div>
                         <div class="nav-right nav-menu">
-                            <router-link to="/search" class="nav-item">
-                                <span class="icon">
-                                    <i class="fa fa-search"></i>
-                                </span>
-                            </router-link>
-                            <router-link to="/settings" class="nav-item">
-                                <span class="icon">
-                                    <i class="fa fa-cog"></i>
-                                </span>
-                            </router-link>
-                            <a class="nav-item" target="_blank" href="//github.com">
-                                <span class="icon">
-                                    <i class="fa fa-github"></i>
-                                </span>
-                            </a>
+                            <template v-for="link in links">
+                                <template v-if="link.type == 'internal'">
+                                    <router-link :to="link.path" class="nav-item">
+                                        <span class="icon"><i class="fa" :class="link.icon"></i></span>
+                                    </router-link>
+                                </template>
+                                <template v-else>
+                                    <a :href="link.path" target="_blank" class="nav-item">
+                                        <span class="icon"><i class="fa" :class="link.icon"></i></span>
+                                    </a>
+                                </template>
+                            </template>
                         </div>
                     </div>
                 </nav>
             </header>
         </section>
-        <section class="hero is-info is-hidden-tablet">
-            <header class="hero-head">
-                <nav class="nav">
-                    <div class="container">
-                        <div class="nav-center">
-                            <router-link to="/search" class="nav-item">
-                                <span class="icon"><i class="fa fa-search"></i></span>Search
+        <nav class="tabs is-hidden-tablet is-fullwidth">
+            <ul>
+                <template v-for="link in links">
+                    <li :class="{'is-active': actualPath == link.path}">
+                        <template v-if="link.type == 'internal'">
+                            <router-link :to="link.path">
+                                <span class="icon is-small"><i class="fa" :class="link.icon"></i></span>{{link.title}}
                             </router-link>
-                            <router-link to="/settings" class="nav-item">
-                                <span class="icon"><i class="fa fa-cog"></i></span>Settings
-                            </router-link>
-                            <a class="nav-item" target="_blank" href="//github.com">
-                                <span class="icon"><i class="fa fa-github"></i></span>GitHub
+                        </template>
+                        <template v-else>
+                            <a :href="link.path" target="_blank">
+                                <span class="icon is-small"><i class="fa" :class="link.icon"></i></span>{{link.title}}
                             </a>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-        </section>
+                        </template>
+                    </li>
+                </template>
+            </ul>
+        </nav>
     </div>
 </template>
-<script></script>
+<script>
+    export default {
+        data() {
+            return {
+                actualPath: this.$route.path,
+                links: [
+                    { title: 'Search', type: 'internal', path: '/search', icon: 'fa-search' },
+                    { title: 'Settings', type: 'internal', path: '/settings', icon: 'fa-cog' },
+                    { title: 'GitHub', type: 'external', path: '//github.com', icon: 'fa-github' }
+                ]
+            };
+        },
+        watch: {
+            $route: {
+                immediate: true,
+                handler(val, oldVal) {
+                    this.actualPath = val.path;
+                }
+            }
+        }
+    }
+</script>
 <style></style>
