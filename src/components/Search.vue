@@ -11,7 +11,7 @@
             </div>
         </section>
         <div v-if="result.length > 0">
-            <users title="Search result" :users="result"></users>
+            <users title="Search result" :users="result" :paging="true" :total="result_count" @changePage="changePage"></users>
         </div>
     </div>
 </template>
@@ -58,6 +58,9 @@
                     self.$store.commit(types.INCREASE_SEARCH_COUNT);
                     self.$store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText, message: response.body.message });
                 });
+            },
+            changePage({ type, actual_page }) {
+                this.search(undefined, actual_page);
             }
         }
     }
