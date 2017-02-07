@@ -5,7 +5,7 @@
                 <h1 class="title">{{ title }}</h1>
             </div>
             <div class="columns is-multiline">
-                <div class="column is-one-third-tablet is-one-quarter-desktop has-text-centered" v-for="u in users">
+                <div class="column is-10-mobile is-offset-1-mobile is-one-third-tablet is-one-quarter-desktop is-2-widescreen has-text-centered" v-for="u in users">
                     <user-item :user="u"></user-item>
                 </div>
             </div>
