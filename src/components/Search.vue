@@ -44,11 +44,11 @@
             })
         },
         methods: {
-            search() {
+            search(e, page) {
                 let self = this;
                 self.$store.commit(types.PAGE_IS_LOADING);
 
-                searchUser(self.searchTerm).then(response => {
+                searchUser(self.searchTerm, page).then(response => {
                     self.result = response.data.items;
                     self.result_count = response.data.total_count;
                     session.set(keys.LAST_SEARCH, response.data.items);
