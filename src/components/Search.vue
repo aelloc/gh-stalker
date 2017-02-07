@@ -30,9 +30,10 @@
             lastSearch = lastSearch ? (session.get(keys.LAST_SEARCH) || {}) : {};
 
             return {
-                searchTerm: '',
-                result_count: 1,
-                result: getLastSearch ? (session.get(keys.LAST_SEARCH) || []) : []
+                searchTerm: lastSearch.term || '',
+                result_count: lastSearch.total,
+                page: lastSearch.page,
+                result: lastSearch.result || []
             };
         },
         computed: {
