@@ -25,8 +25,9 @@
     export default {
         components: { Users },
         data() {
-            let getLastSearch = local.get(keys.SETTINGS);
-            getLastSearch = getLastSearch !== null ? getLastSearch.lastSearch : true;
+            let lastSearch = local.get(keys.SETTINGS);
+            lastSearch = lastSearch !== null ? lastSearch.lastSearch : true;
+            lastSearch = lastSearch ? (session.get(keys.LAST_SEARCH) || {}) : {};
 
             return {
                 searchTerm: '',
