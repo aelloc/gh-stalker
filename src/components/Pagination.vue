@@ -13,11 +13,12 @@
     export default {
         props: {
             first: { type: Number, default: 1 }, 
-            last: { type: Number, default: 1 }
+            last: { type: Number, default: 1 },
+            current: { type: Number, default: 1 }
         },
         data() {
             return {
-                actual_page: 1
+                actual_page: this.current
             };
         },
         methods: {
