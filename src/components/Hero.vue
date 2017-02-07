@@ -33,7 +33,7 @@
                 </nav>
             </header>
         </section>
-        <section class="hero is-info">
+        <section class="hero is-info is-hidden-tablet">
             <header class="hero-head">
                 <nav class="nav">
                     <div class="container">
@@ -55,10 +55,4 @@
     </div>
 </template>
 <script></script>
-<style scoped>
-    @media (min-width: 768px) {
-        section.hero.is-info {
-            display: none;
-        }
-    }
-</style>
+<style></style>
