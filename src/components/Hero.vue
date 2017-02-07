@@ -57,8 +57,7 @@
                 actualPath: this.$route.path,
                 links: [
                     { title: 'Search', type: 'internal', path: '/search', icon: 'fa-search' },
-                    { title: 'Settings', type: 'internal', path: '/settings', icon: 'fa-cog' },
-                    { title: 'GitHub', type: 'external', path: '//github.com', icon: 'fa-github' }
+                    { title: 'Settings', type: 'internal', path: '/settings', icon: 'fa-cog' }
                 ]
             };
         },
