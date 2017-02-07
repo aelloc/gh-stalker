@@ -51,7 +51,7 @@
                 searchUser(self.searchTerm, page).then(response => {
                     self.result = response.data.items;
                     self.result_count = response.data.total_count;
-                    session.set(keys.LAST_SEARCH, response.data.items);
+                    session.set(keys.LAST_SEARCH, { term: self.searchTerm, page, total: response.data.total_count, result: response.data.items});
                     self.$store.commit(types.INCREASE_SEARCH_COUNT);
                     self.$store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText });
                 }, response => {
