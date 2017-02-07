@@ -9,19 +9,33 @@
                     <user-item :user="u"></user-item>
                 </div>
             </div>
+            <template v-if="paging">
+                <pagination @changePage="propagate" :last="Math.round(total / 30)"></pagination>
+            </template>
         </div>
     </section>
 </template>
 <script>
     import { mapState } from 'vuex';
     import UserItem from './UserItem.vue';
+    import Pagination from './Pagination.vue';
 
     export default {
-        props: ['title', 'users'],
-        components: { UserItem },
+        components: { Pagination, UserItem },
+        props: {
+            title: String,
+            users: [Object, Array],
+            total: Number,
+            paging: { type: Boolean, default: false }
+        },
         computed: mapState({
             pageOk: state => state.page.isOk
-        })
+        }),
+        methods: {
+            propagate(e) {
+                this.$emit('changePage', e);
+            }
+        }
     }
 </script>
 <style></style>
