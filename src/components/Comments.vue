@@ -10,6 +10,7 @@
     import Comment from './Comment.vue'
 
     export default {
+        components: { Comment },
         computed: {
             ...mapGetters({
                 commit_sha: 'commit_sha'

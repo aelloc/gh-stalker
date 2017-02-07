@@ -37,8 +37,8 @@
     import Spinner from './Spinner.vue';
 
     export default {
-        props: ['username'],
         components: { User, Repositories, Commits, Spinner },
+        props: ['username'],
         computed: mapState({
             showCommits: state => state.commit.show,
             qntRepos: state => state.user.repositories.length

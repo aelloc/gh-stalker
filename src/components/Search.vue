@@ -23,6 +23,7 @@
     import * as types from '../store/mutationTypes';
 
     export default {
+        components: { Users },
         data() {
             let getLastSearch = local.get(keys.SETTINGS);
             getLastSearch = getLastSearch !== null ? getLastSearch.lastSearch : true;
@@ -32,7 +33,6 @@
                 result: getLastSearch ? (session.get(keys.LAST_SEARCH) || []) : []
             };
         },
-        components: { Users },
         computed: {
             ...mapGetters({
                 isLoading: 'page_loading'
