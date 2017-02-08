@@ -56,4 +56,11 @@
         }
     }
 </script>
-<style></style>
+<style scoped>
+    .commit-msg {
+        color: #000;
+        text-decoration: none;
+        border-bottom: none!important;
+        word-break: break-word;
+    }
+</style>
