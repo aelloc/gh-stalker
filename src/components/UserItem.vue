@@ -36,4 +36,8 @@
         }
     }
 </script>
-<style></style>
+<style scoped>
+    .clickable {
+        cursor: pointer;
+    }
+</style>
