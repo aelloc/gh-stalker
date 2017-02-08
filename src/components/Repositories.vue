@@ -19,4 +19,9 @@
         })
     }
 </script>
-<style></style>
+<style scoped>
+    .panel .scroll {
+        height: 147px;
+        overflow-y: auto;
+    }
+</style>
