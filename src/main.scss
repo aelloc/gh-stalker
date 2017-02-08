@@ -1,31 +1,7 @@
 @import "~bulma/bulma";
-// @font-face {
-//     font-family: 'Modeka';
-//     src: url('./dependencies/fonts/Modeka.otf');
-// }
-
-.modeka {
-    font-family: 'Modeka';
-}
 
 .has-content-centered {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.commit-msg {
-    color: #000;
-    text-decoration: none;
-    border-bottom: none!important;
-    word-break: break-word;
-}
-
-.panel .scroll {
-    height: 147px;
-    overflow-y: auto;
-}
-
-.clickable {
-    cursor: pointer;
 }
