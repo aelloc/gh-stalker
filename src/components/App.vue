@@ -5,17 +5,15 @@
             <error></error>
         </div>
         <router-view></router-view>
-        <footnote></footnote>
     </div>
 </template>
 <script>
     import { mapState } from 'vuex'
     import Hero from './Hero.vue';
     import Error from './Error.vue';
-    import Footnote from './Footnote.vue';
 
     export default {
-        components: { Hero, Error, Footnote },
+        components: { Hero, Error },
         computed: mapState({
             page: state => state.page,
             searchCount: state => state.search.count,
