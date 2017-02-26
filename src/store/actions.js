@@ -1,4 +1,4 @@
-import { local, keys } from '../services/storageService';
+import { local, session, keys } from '../services/storageService';
 import { searchRepos, branchs, commitComments, user } from '../services/githubService';
 import * as types from './mutationTypes';
 
@@ -39,4 +39,19 @@ export const getUserInformations = function (store, username) {
     }).catch(response => {
         store.commit(types.UPDATE.PAGE, { isOk: response.response == 200, status: response.statusText, message: response.data.message, userSelected: false });
     });
+}
+
+export const saveSettingsChanges = function(store, { recentlySeen, lastSearch }) {
+    let settings = { recentlySeen, lastSearch };
+    store.commit(types.CHANGE_SETTINGS, settings);
+    local.set(keys.SETTINGS, settings);
+
+    if(!recentlySeen) {
+        local.remove(keys.MOST_VIEWED);
+    }
+
+    if(!lastSearch) {
+        session.remove(keys.LAST_SEARCH);
+    }
+}
 }
