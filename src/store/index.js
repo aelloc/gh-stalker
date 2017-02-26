@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import commit from './modules/commit';
+import history from './modules/history';
 import page from './modules/page';
 import search from './modules/search';
 import settings from './modules/settings';
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     strict: true,
     modules: {
         commit,
+        history,
         page,
         search,
         settings,
