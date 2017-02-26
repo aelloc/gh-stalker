@@ -25,10 +25,9 @@
     export default {
         components: { Notification, Toggle },
         data() {
-            let valueExists = local.get(keys.SETTINGS) || false;
             return {
-                recentlySeen: valueExists ? valueExists.recentlySeen : true,
-                lastSearch: valueExists ? valueExists.lastSearch : true,
+                recentlySeen: this.$store.state.settings.recentlySeen,
+                lastSearch: this.$store.state.settings.lastSearch,
                 notification: {
                     message: "",
                     type: "",
@@ -46,7 +45,7 @@
                 };
             },
             saveChanges() {
-                local.set(keys.SETTINGS, { recentlySeen: this.recentlySeen, lastSearch: this.lastSearch });
+                this.$store.dispatch('saveSettingsChanges', { recentlySeen: this.recentlySeen, lastSearch: this.lastSearch });
                 this.notification = {
                     message: "Changes successfully applied!",
                     type: "is-success",
@@ -64,6 +63,5 @@
             }
         }
     }
-
 </script>
 <style></style>
