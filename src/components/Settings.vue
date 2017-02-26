@@ -7,7 +7,7 @@
             <h2>Recently Seen</h2>
             <p>Store the last user profiles you have visited.</p>
             <toggle title="Storage is " :default="recentlySeen" @change="changeRecentlySeen"></toggle>
-            <button @click="clearUserHistory" class="button is-warning">Clear storage</button>
+            <button @click="clearUserHistory" class="button is-warning" :class="{'is-disabled': !recentlySeen}" >Clear storage</button>
 
             <h2>Search result</h2>
             <p>Store the latest search result.</p>
