@@ -54,4 +54,8 @@ export const saveSettingsChanges = function(store, { recentlySeen, lastSearch })
         session.remove(keys.LAST_SEARCH);
     }
 }
+
+export const saveLastSearch = function(store, searchResult) {
+    store.commit(types.UPDATE_LAST_SEARCH, searchResult);
+    session.set(keys.LAST_SEARCH, searchResult);
 }
