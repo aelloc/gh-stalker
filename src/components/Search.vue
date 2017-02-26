@@ -17,7 +17,6 @@
 </template>
 <script>
     import { mapGetters, mapState } from 'vuex';
-    import { keys, session, local } from '../services/storageService';
     import { searchUser } from '../services/githubService';
     import Users from './Users.vue';
     import * as types from '../store/mutationTypes';
@@ -25,15 +24,13 @@
     export default {
         components: { Users },
         data() {
-            let lastSearch = local.get(keys.SETTINGS);
-            lastSearch = lastSearch !== null ? lastSearch.lastSearch : true;
-            lastSearch = lastSearch ? (session.get(keys.LAST_SEARCH) || {}) : {};
-
+            let lastSearch = this.$store.state.settings.lastSearch ? this.$store.state.search.last : 
+                { searchTerm: '', result_count: 0, page: 1, result: [] };
             return {
-                searchTerm: lastSearch.term || '',
+                searchTerm: lastSearch.term,
                 result_count: lastSearch.total,
                 page: lastSearch.page,
-                result: lastSearch.result || []
+                result: lastSearch.result
             };
         },
         computed: {
@@ -53,7 +50,7 @@
                 searchUser(self.searchTerm, page).then(response => {
                     self.result = response.data.items;
                     self.result_count = response.data.total_count;
-                    session.set(keys.LAST_SEARCH, { term: self.searchTerm, page, total: response.data.total_count, result: response.data.items});
+                    self.$store.dispatch('saveLastSearch', { term: self.searchTerm, page, total: response.data.total_count, result: response.data.items});
                     self.$store.commit(types.INCREASE_SEARCH_COUNT);
                     self.$store.commit(types.UPDATE.PAGE, { isOk: response.status == 200, status: response.statusText });
                 }, response => {
