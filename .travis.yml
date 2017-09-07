@@ -1,6 +1,19 @@
 language: node_js
 node_js:
-  - "6.9.1"
-script:
-  - npm run ci
-  - bash ./.travis-deploy.sh
+  - "8.1.1"
+
+branches:
+  only:
+    - master
+
+install: npm install
+script: npm run build
+
+after_success: 
+  - npm intall -g firebase-tools
+  - firebase deploy --token $FIREBASE_API_TOKEN --non-interactive --only hosting
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
